@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{Name}} v{{LatestVersion}} - change log</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">
+                {{Name}} v{{LatestVersion}}
+            </h1>
+            <p class="subtitle">
+                Change log
+                </p>
+
+                {% for item in ChangeLogItems %}
+                <div class="card">
+                    <div class="card-content">
+                        <div class="media">
+                            <div class="media-content">
+                                <p class="title is-5">{{item.Subject}}</p>
+                                <p class="subtitle is-6">{{item.Version}} - {{item.Date}}</p>
+                            </div>
+                        </div>
+                        <div class="content">{{item.Body}}<br></div>
+                    </div>
+                </div>
+            <br />
+                {% endfor %}
+        </div>
+    </section>
+    <footer class="footer"><p>{{Copyright}}</p></footer>
+</body>
+</html>
